@@ -555,6 +555,7 @@ private
 		if input_stream && !input_stream.closed?
 			input_stream.close rescue nil
 		end
+		GC.start if rand(3) == 0
 	end
 	
 	# Read the next request from the given socket, and return
